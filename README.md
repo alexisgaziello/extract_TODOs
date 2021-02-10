@@ -19,3 +19,10 @@ python path_to_script path_to_directory path_to_csv/filename.csv
 Import the function _extract_TODOs(directory)_ from the package _extract_TODOs_.
 
 The argument is the path to the directory to explore. 
+
+### Result
+
+
+Description	| File	| Full | Path	| Line
+------------ | ------------- | ------------- | ------------- | -------------
+Content of line where TODO was found | File where TODO was found | Full path to file where TODO was found | Line number where TODO was found
