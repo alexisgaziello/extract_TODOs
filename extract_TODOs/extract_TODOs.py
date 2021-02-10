@@ -9,12 +9,13 @@ def explore_directory(directory):
             yield path, file
 
 
-def extract_TODOs(directory, extract_following_lines=False, ignore_directories = ['/dist/']):
+def extract_TODOs(directory, extract_following_lines=False, ignore_directories = ['dist']):
     df = pd.DataFrame(columns=["Description", "File", "Full Path", "Line", "Priority"])
     directory_location = os.path.dirname(directory)
 
     for path, file in explore_directory(directory):
-
+        # Add '/' to make sure that it's a directory with that specific name
+        ignore_directories = ['/' + ignore_directory + '/' for ignore_directory in ignore_directories]
         if any(ignore_directory in path for ignore_directory in ignore_directories):
             continue
 
