@@ -2,6 +2,7 @@ import os
 import sys
 import pandas as pd
 
+
 def explore_directory(directory):
     for root, sub_directory, files in os.walk(directory):
         for file in files:
@@ -9,7 +10,7 @@ def explore_directory(directory):
             yield path, file
 
 
-def extract_TODOs(directory, extract_following_lines=False, ignore_directories = ['dist']):
+def extract_TODOs(directory, extract_following_lines=False, ignore_directories=['dist']):
     df = pd.DataFrame(columns=["Description", "File", "Full Path", "Line"])
     directory_location = os.path.dirname(directory)
 
@@ -43,15 +44,14 @@ def extract_TODOs(directory, extract_following_lines=False, ignore_directories =
 
                         # Get attached comments
                         j = i+1
-                        while j<len(lines):
+                        while j < len(lines):
                             if char in lines[j] and "TODO" in lines[j]:
                                 break
                             content += ' ' + lines[j]
                             j += 1
 
                     df.loc[len(df)] = [content, file, os.path.relpath(path, directory_location), i+1]
-            
-        
+
     return df
     
 
