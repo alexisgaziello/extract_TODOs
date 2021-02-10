@@ -17,4 +17,5 @@ python path_to_script path_to_directory path_to_csv/filename.csv
 ### As python dataframe
 
 Import the function _extract_TODOs(directory)_ from the package _extract_TODOs_.
+
 The argument is the path to the directory to explore. 
