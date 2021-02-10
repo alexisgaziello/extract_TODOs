@@ -10,9 +10,9 @@ A Python script to extract TODOs from a project.
 python path_to_script path_to_directory path_to_csv/filename.csv
 ```
 
-**path_to_script**: path to the following file: _/extract_TODOs/extract_TODOs/extract_TODOs.py_.
-**path_to_directory**: path to the target directory to explore.
-**path_to_csv/filename.csv**: filename and the path to the csv file where you want to save results.
+- **path_to_script**: path to the following file: _/extract_TODOs/extract_TODOs/extract_TODOs.py_.
+- **path_to_directory**: path to the target directory to explore.
+- **path_to_csv/filename.csv**: filename and the path to the csv file where you want to save results.
 
 ### As python dataframe
 
