@@ -23,6 +23,6 @@ The argument is the path to the directory to explore.
 ### Result
 
 
-Description	| File	| Full | Path	| Line
------------- | ------------- | ------------- | ------------- | -------------
+Description	| File	| Full Path	| Line
+------------ | ------------- | ------------- | ------------- 
 Content of line where TODO was found | File where TODO was found | Full path to file where TODO was found | Line number where TODO was found
