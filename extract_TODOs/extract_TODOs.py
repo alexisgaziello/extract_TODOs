@@ -10,7 +10,11 @@ def explore_directory(directory):
             yield path, file
 
 
-def extract_TODOs(directory, extract_following_lines=False, ignore_directories=['dist']):
+def extract_TODOs(directory,
+                  extract_following_lines=False,
+                  ignore_directories=["dist", "node_modules"],
+                  ignore_extensions=[".DS_Store", ".o"]
+                  ):
     df = pd.DataFrame(columns=["Description", "File", "Full Path", "Line"])
     directory_location = os.path.dirname(directory)
 
@@ -18,7 +22,8 @@ def extract_TODOs(directory, extract_following_lines=False, ignore_directories=[
     ignore_directories = ['/' + ignore_directory + '/' for ignore_directory in ignore_directories]
 
     for path, file in explore_directory(directory):
-        if any(ignore_directory in path for ignore_directory in ignore_directories):
+        if any(ignore_directory in path for ignore_directory in ignore_directories) \
+                or any(file.endswith(ignore_extension) for ignore_extension in ignore_extensions):
             continue
 
         with open(path, 'r') as f:
